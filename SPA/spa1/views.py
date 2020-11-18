@@ -4,7 +4,15 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index (request):
-    return render(request, 'spa1/index.html')
+    # return render(request, 'spa1/index.html')
+    
+    para = []
+    for i in range(1,101):
+        para.append(i)
+    return render(request, 'spa1/window.html',{
+        'para':para
+    })
+    
 
 texts = [
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since      the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -15,3 +23,5 @@ def sections(request, num):
     if 1<= num <= 3:
         return HttpResponse(texts[num-1])
     else: HttpResponse("page doesnt exists")
+    
+    

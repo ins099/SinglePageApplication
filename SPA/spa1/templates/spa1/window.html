@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window JS Attribute</title>
+    <script>
+        window.onscroll = () =>{
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight){
+                console.log(window.document.body.innerHeight)
+                document.querySelector('body').style.background = 'green';
+            } else {
+                console.log(window.document.body.offsetHeight)
+                document.querySelector('body').style.background = "white";
+                }
+        }
+    </script>
+</head>
+<body>
+    {% for p in para %}
+        <p>{{p}}</p>
+    {% endfor %}
+</body>
+</html>
